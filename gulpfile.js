@@ -10,25 +10,25 @@ var autoprefixer = require('autoprefixer');
 var server = require("browser-sync").create();
 
 gulp.task('style', function(){
-	gulp.src(['sass/style.scss'])
-		.pipe(plumber())
-		.pipe(sass())
-		.pipe(postcss([
-			autoprefixer({browsers: [
-				'last 2 versions'
-				]})
-			]))
-		.pipe(gulp.dest("css"))
-		.pipe(server.stream());
+  gulp.src(['sass/style.scss'])
+    .pipe(plumber())
+    .pipe(sass())
+    .pipe(postcss([
+      autoprefixer({browsers: [
+        'last 2 versions'
+        ]})
+      ]))
+    .pipe(gulp.dest("css"))
+    .pipe(server.stream());
 });
 gulp.task('serve', function(){
-	server.init({
-		server: '.'
-	});
+  server.init({
+    server: '.'
+  });
 
-	gulp.watch('sass/**/*.{scss,sass}', ['style']);
-	gulp.watch('*.html').on('change', server.reload);
+  gulp.watch('sass/**/*.{scss,sass}', ['style']);
+  gulp.watch('*.html').on('change', server.reload);
 });
 gulp.task('server', function(){
-	run('style', 'serve');
+  run('style', 'serve');
 });
