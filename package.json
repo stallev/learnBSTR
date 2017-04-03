@@ -22,7 +22,7 @@
   "scripts": {
     "build": "gulp style",
     "start": "gulp serve",
-    "server": "gulp-server"
+    "server": "gulp server"
   },
   "engines": {
     "node": "6.10"
