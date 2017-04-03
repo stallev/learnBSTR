@@ -14,13 +14,15 @@
     "gulp-imagemin": "^3.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.3.0",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "jquery": "^3.2.1",
     "run-sequence": "^1.2.2"
   },
   "scripts": {
     "build": "gulp style",
-    "start": "gulp server"
+    "start": "gulp serve",
+    "server": "gulp-server"
   },
   "engines": {
     "node": "6.10"
